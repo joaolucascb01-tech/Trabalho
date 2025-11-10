@@ -75,15 +75,3 @@ const perfilDiv = document.getElementById("perfil");
 if (perfilDiv) {
   const dados = JSON.parse(localStorage.getItem("dadosUsuario"));
 
-  if (!dados) {
-    window.location.href = "form.html";
-  } else {
-    perfilDiv.innerHTML = `
-      <p><strong>Nome:</strong> ${dados.nome} ${dados.sobrenome}</p>
-      <p><strong>Email:</strong> ${dados.email}</p>
-      <p><strong>Idade:</strong> ${dados.idade}</p>
-      <p><strong>Curso:</strong> ${dados.curso}</p>
-      <p><strong>Período:</strong> ${dados.periodo}</p>
-    `;
-  }
-}
