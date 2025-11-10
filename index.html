@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seja Bem-vindo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Bem-vindo!</h1>
+  <div id="perfil"></div>
+  <a href="form.html">Ir para o formulário</a>
+
+<div id="perfil"></div>
+
+<script>
+  const dados = JSON.parse(localStorage.getItem("dadosUsuario"));
+
+  if (!dados) {
+    window.location.href = "form.html";
+  } else {
+    document.getElementById("perfil").innerHTML = `
+      <p><strong>Nome:</strong> ${dados.nome} ${dados.sobrenome}</p>
+      <p><strong>Email:</strong> ${dados.email}</p>
+      <p><strong>Idade:</strong> ${dados.idade}</p>
+      <p><strong>Curso:</strong> ${dados.curso}</p>
+      <p><strong>Período:</strong> ${dados.periodo}</p>
+    `;
+  }
+</script>
+</body>
+</html>
